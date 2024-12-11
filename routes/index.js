@@ -18,7 +18,7 @@ router.get('/', async function(req, res, next) {
     var oneDay = 1000 * 60 * 60 * 24;
     var day = Math.floor(diff / oneDay);
 
-    var item = days[((day + 4) + 35 - 16) % days.length];
+    var item = days[((day + 19)) % days.length];
     console.log("reading image")
   
     const data = fs.readFileSync(path.resolve(__dirname, `../day_image/${item}`), null);
