@@ -31,7 +31,6 @@ router.get('/', async function(req, res, next) {
     console.log(e)
   }
 });
-app.use(bodyParser.json());
 
 // POST метод для сохранения пожеланий
 app.post('/submit-wish', (req, res) => {
