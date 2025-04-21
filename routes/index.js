@@ -33,7 +33,7 @@ router.get('/', async function(req, res, next) {
 });
 
 // POST метод для сохранения пожеланий
-app.post('/submit-wish', (req, res) => {
+router.post('/submit-wish', (req, res) => {
     const { name, wish } = req.body;
 
     if (!name || !wish) {
@@ -62,7 +62,7 @@ app.post('/submit-wish', (req, res) => {
 });
 
 // GET метод для получения списка пожеланий
-app.get('/wishes', (req, res) => {
+router.get('/wishes', (req, res) => {
     fs.readFile(FILE_PATH, 'utf8', (err, data) => {
         if (err && err.code !== 'ENOENT') {
             return res.status(500).json({ error: 'Failed to read wishes file.' });
